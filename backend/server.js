@@ -4,10 +4,11 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/auth");
 const authenticateJWT = require("./middlewares/authenticateJWT");
+const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
-
+const PORT = 3001;
+app.use(cors());
 mongoose.connect(
   "mongodb+srv://abhishekdahal397:Ri3lcgFuXGKrfuzG@jwt.hc9163v.mongodb.net/",
   { useNewUrlParser: true, useUnifiedTopology: true }
